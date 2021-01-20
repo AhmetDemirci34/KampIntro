@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace KampIntro
 {
@@ -6,17 +7,18 @@ namespace KampIntro
     {
         static void Main(string[] args)
         {
-            int sayi = 0, toplam = 0; // değişkenlerin başlangıç değeri 0 olarak ayarlanıyor. 
-            while (sayi % 2 == 0)  // koşulda sayi değişkeninin çift olup olmadığına bakılıyor.  
-            {
-                toplam = toplam + sayi; //döngü içerisinde sayi değişkeninin değeri toplama ekleniyor.  
-                Console.Write("Bir sayı giriniz : ");
-                sayi = Convert.ToInt16(Console.ReadLine());  // Girilen değer sayi değişkenine atanıyor.  
-            }
-            Console.WriteLine("Girilen Çift Sayıların Toplamı = " + toplam); // Toplam sonuç yazdırılıyor.
+            int number1 = 10;
+            int number2 = 20;
+            var result = Add(ref  number1, number2); 
+            Console.WriteLine(result);
+            Console.WriteLine(number1);
+        }
 
-            Console.ReadKey();
+        static int Add( ref  int number1, int number2)
+        {
+            number1 = 30;
 
+            return number1 + number2;
         }
     }
 }
