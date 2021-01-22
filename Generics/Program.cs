@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace Generics
 {
@@ -7,56 +6,52 @@ namespace Generics
     {
         static void Main(string[] args)
         {
-            MyClass<string> myClass = new MyClass<string>();
-            myClass.Add("Ahmet");
+            Ahmet<string> ahmet = new Ahmet<string>();
+            ahmet.Ekle("Mehmet");
+            ahmet.Ekle("Mehmet");
+            ahmet.Ekle("Mehmet");
+            ahmet.Ekle("Mehmet");
 
 
-
-            List<string> myclas2 = new List<string>();
-            myclas2.Add("Ahmet");
-
-            foreach (var item in myclas2)
-            {
-                Console.WriteLine(item);
-            }
-
+            Console.WriteLine(ahmet.Count);
 
 
             Console.ReadKey();
         }
     }
 
-    class MyClass<T>
+    class Ahmet<T>
     {
         T[] _array;
-        T[] _tempArray;
-        public MyClass()
+        T[] _arrayTemp;
+
+        public Ahmet()
         {
             _array = new T[0];
         }
 
-        public void Add(T item)
+        public void Ekle(T item)
         {
-            _tempArray = _array;
-            _array = new T[_tempArray.Length + 1];
-            for (int i = 0; i < _tempArray.Length; i++)
+            _arrayTemp = _array;
+            _array = new T[_array.Length + 1];
+
+            for (int i = 0; i < _arrayTemp.Length; i++)
             {
-                _array[i] = _tempArray[i];
+                _array[i]= _arrayTemp[i];
             }
 
             _array[_array.Length - 1] = item;
-
         }
 
-      
+        
 
-        public int count
+        public int Count
         {
             get { return _array.Length; }
-         
-
+          
         }
 
-
     }
+
+    
 }

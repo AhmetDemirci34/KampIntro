@@ -17,3 +17,21 @@ dotnet_diagnostic.IDE0028.severity = none
 
 # IDE0058: Expression value is never used
 dotnet_diagnostic.IDE0058.severity = none
+
+# IDE0059: Unnecessary assignment of a value
+dotnet_diagnostic.IDE0059.severity = none
+
+# IDE0040: Add accessibility modifiers
+dotnet_diagnostic.IDE0040.severity = none
+
+# IDE0060: Remove unused parameter
+dotnet_diagnostic.IDE0060.severity = none
+
+# Default severity for all analyzer diagnostics
+dotnet_analyzer_diagnostic.severity = none
+
+# IDE0008: Use explicit type
+dotnet_diagnostic.IDE0008.severity = none
+
+# IDE0018: Inline variable declaration
+dotnet_diagnostic.IDE0018.severity = none
